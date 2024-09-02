@@ -287,7 +287,7 @@ class TabooGameBenchmark(GameBenchmark):
 
 def main():
     # select one experiment and instance
-    experiments = file_utils.load_json("in/instances.json", "taboo")
+    experiments = file_utils.load_json("in/en/instances.json", "taboo")
     experiment_1 = experiments["experiments"][0]
     game_1 = experiment_1["game_instances"][0]
     master = Taboo(experiment_1, ["mock", "mock"])

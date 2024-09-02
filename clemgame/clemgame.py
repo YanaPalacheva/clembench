@@ -620,7 +620,7 @@ class GameBenchmark(GameResourceLocator):
     def setup(self, instances_name: str = None):
         if instances_name is None:
             instances_name = "instances"
-        self.instances = self.load_json(f"in/{instances_name}")
+        self.instances = self.load_json(f"in/{instances_name}") # bottleneck
 
     def build_transcripts(self, results_dir: str = None):
         results_root = file_utils.results_root(results_dir)
@@ -920,9 +920,9 @@ class GameInstanceGenerator(GameResourceLocator):
         """
         raise NotImplementedError()
 
-    def generate(self, filename="instances.json", **kwargs):
+    def generate(self, sub_dir="in", filename="instances.json", **kwargs):
         self.on_generate(**kwargs)
-        self.store_file(self.instances, filename, sub_dir="in")
+        self.store_file(self.instances, filename, sub_dir=sub_dir)
 
 
 def load_benchmarks(do_setup: bool = True) -> List[GameBenchmark]:
