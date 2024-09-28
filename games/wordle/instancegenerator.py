@@ -1,7 +1,5 @@
 """
-Randomly generate templates for the private/shared game.
-
-Creates files in ./instances and ./requests
+This script generates game instances for wordle.
 """
 from tqdm import tqdm
 
@@ -20,7 +18,7 @@ class WordleGameInstanceGenerator(GameInstanceGenerator):
         self.game_name = game_name
 
     def on_generate(self):
-        self.experiment_config = self.load_json("resources/config.json")
+        self.experiment_config = self.load_json("en/resources/configs/config.json")
         self.instance_utils = InstanceUtils(self.experiment_config, self.game_name)
 
         target_words_test_dict = self.instance_utils.select_target_words()

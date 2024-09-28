@@ -86,4 +86,5 @@ class TabooGameInstanceGenerator(GameInstanceGenerator):
 
 
 if __name__ == '__main__':
+    # todo add lang arg and read config file
     TabooGameInstanceGenerator().generate(sub_dir=f"{LANGUAGE}/in")

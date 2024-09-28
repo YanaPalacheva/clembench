@@ -16,6 +16,8 @@ def create_folder_structure(lang: str):
     for folder in folders:
         os.makedirs(folder, exist_ok=True)
 
+    # todo: create readme and config files
+
 
 def get_related_words(lang: str) -> {}:
     if lang == 'en':
